@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\net5.0-windows\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net5.0-windows\Taller_3.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net5.0-windows\Taller_3.deps.json" />
+    <Content Include="bin\Debug\net5.0-windows\Taller_3.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\net5.0-windows\Taller_3.runtimeconfig.json" />
+    <Content Include="obj\Debug\net5.0-windows\Taller_3.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\Taller_3.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net5.0-windows\ref\Taller_3.dll" />
+    <None Include="bin\Debug\net5.0-windows\Taller_3.dll" />
+    <None Include="bin\Debug\net5.0-windows\Taller_3.exe" />
+    <None Include="bin\Debug\net5.0-windows\Taller_3.pdb" />
+    <None Include="obj\Debug\net5.0-windows\apphost.exe" />
+    <None Include="obj\Debug\net5.0-windows\ref\Taller_3.dll" />
+    <None Include="obj\Debug\net5.0-windows\Taller_3.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net5.0-windows\Taller_3.assets.cache" />
+    <None Include="obj\Debug\net5.0-windows\Taller_3.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net5.0-windows\Taller_3.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net5.0-windows\Taller_3.dll" />
+    <None Include="obj\Debug\net5.0-windows\Taller_3.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net5.0-windows\Taller_3.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net5.0-windows\Taller_3.pdb" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Taller_3.csproj.nuget.g.props" />
+    <None Include="obj\Taller_3.csproj.nuget.g.targets" />
+  </ItemGroup>
+
+</Project>
