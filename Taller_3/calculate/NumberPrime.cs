@@ -12,9 +12,7 @@ namespace Taller_3
     public class NumberPrime
     {
         public long number { get; set; }
-        public static bool flag = true;
         
-
 
         public NumberPrime(long NewNumber)
         {
@@ -24,7 +22,7 @@ namespace Taller_3
         {
             int INC = (num % 2 == 1) ? 2 : 1;
             long lim = (long)Math.Sqrt(num);
-            
+
             for (long i = 2; i <= lim/2; i += INC)
             {
                 if (num % i == 0 || !flag)
@@ -40,9 +38,9 @@ namespace Taller_3
         public static long firstDivMiddle(long num)
         {
             int INC = (num % 2 == 1) ? 2 : 1;
-            long lim = (long)Math.Sqrt(num);
+            long lim = (long) Math.Sqrt(num);
 
-            for (long j = (lim/2) + 2; j <= num; j += INC)
+            for (long j = (lim /2)+2; j <= num; j += INC)
             {
                 if (num % j == 0 || !flag)
                 {
