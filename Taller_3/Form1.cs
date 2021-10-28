@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using Taller_3.calculate;
 
 namespace Taller_3
 {
@@ -23,15 +24,20 @@ namespace Taller_3
         private void button1_Click(object sender, EventArgs e)
         {
             //Variables
+
             DateTime ini, fin;
             System.TimeSpan dur;
-            bool esPrimo = false;
+            bool esPrimo = false; 
+
             long num =long.Parse(numericUpDown1.Text);
             //9223372036854775783
+
             Thread[] tr = new Thread[3];
+
             ini = DateTime.Now;
             esPrimo = NumberPrime.isPrime(num);
             fin = DateTime.Now;
+
             dur = fin.Subtract(ini);
 
 
@@ -80,7 +86,33 @@ namespace Taller_3
 
         private void button2_Click(object sender, EventArgs e)
         {
+            bool IsPrimeNoThread = false;
+            DateTime ini, fin;
+            System.TimeSpan dur;
+            long num = long.Parse(numericUpDown1.Text);
 
+            ini = DateTime.Now;
+            IsPrimeNoThread = NumberPrimeNoThread.isPrime(num);
+            fin = DateTime.Now;
+
+            dur = fin.Subtract(ini);
+
+            if (IsPrimeNoThread)
+            {
+                string numero = num.ToString();
+                string rta = numero + " Es primo";
+                label4.Text = rta;
+                string tiempo = dur.ToString();
+                label5.Text = tiempo;
+            }
+            else
+            {
+                string numero = num.ToString();
+                string rta = numero + " No es primo";
+                label4.Text = rta;
+                string tiempo = dur.ToString();
+                label5.Text = tiempo;
+            }
         }
     }
 }

@@ -10,6 +10,13 @@ namespace Taller_3.calculate
 
 
     {
+        public long number { get; set; }
+
+        public NumberPrimeNoThread(long NewNumber)
+        {
+            number = NewNumber;
+        }
+
         public static long CalulatePrime(long num)
         {
             int INC = (num % 2 == 1) ? 2 : 1;
