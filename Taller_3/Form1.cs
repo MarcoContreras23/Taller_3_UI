@@ -31,7 +31,7 @@ namespace Taller_3
             DateTime ini, fin;
             System.TimeSpan dur;
             bool esPrimo = false;
-            long num = 5;
+            long num = 9223372036854775783;
             //9223372036854775783
             Thread[] tr = new Thread[3];
             ini = DateTime.Now;
