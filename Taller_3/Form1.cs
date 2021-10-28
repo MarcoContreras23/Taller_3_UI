@@ -12,26 +12,21 @@ using System.Windows.Forms;
 namespace Taller_3
 {
     public partial class Form1 : Form
-    {   
+    {
 
 
 
         public Form1()
         {
             InitializeComponent();
-
-
         }
-
-        
-
         private void button1_Click(object sender, EventArgs e)
         {
             //Variables
             DateTime ini, fin;
             System.TimeSpan dur;
             bool esPrimo = false;
-            long num = 5;
+            long num =long.Parse(numericUpDown1.Text);
             //9223372036854775783
             Thread[] tr = new Thread[3];
             ini = DateTime.Now;
@@ -40,10 +35,10 @@ namespace Taller_3
             dur = fin.Subtract(ini);
 
 
-            tr[0] = new Thread(() => NumberPrime.firstDivGreaterThan(num) );
+            tr[0] = new Thread(() => NumberPrime.firstDivGreaterThan(num));
             tr[1] = new Thread(() => NumberPrime.firstDivMiddle(num));
             tr[2] = new Thread(() => NumberPrime.isPrime(num));
-            
+
             foreach (var thread in tr)
             {
                 thread.Start();
@@ -79,6 +74,11 @@ namespace Taller_3
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

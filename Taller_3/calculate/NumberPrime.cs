@@ -1,44 +1,39 @@
 ﻿using System;
 
 namespace Taller_3
-
-/*
-*@author: Marco Contreras
-*/
-
+///
+/// <summary>
+/// @author: Marco Contreras
+/// </summary>
 {
-
-
-    /*
-    *Class in charge of calculating whether the number is prime or not
-    */
     /// <summary>
-    /// 
+    /// Class in charge of calculating whether the number is prime or not
     /// </summary>
     public class NumberPrime
     {
         public long number { get; set; }
+        public static bool flag = true;
         
+
 
         public NumberPrime(long NewNumber)
         {
             number = NewNumber;
         }
-
-       
-
         public static long firstDivGreaterThan(long num)
         {
             int INC = (num % 2 == 1) ? 2 : 1;
             long lim = (long)Math.Sqrt(num);
-
+            
             for (long i = 2; i <= lim/2; i += INC)
             {
-                if (num % i == 0)
+                if (num % i == 0 || !flag)
                 {
+                    flag = false;
                     return i;
                 }
             }
+
             return num;
         }
 
@@ -47,10 +42,11 @@ namespace Taller_3
             int INC = (num % 2 == 1) ? 2 : 1;
             long lim = (long)Math.Sqrt(num);
 
-            for (long j = (lim /2)+2; j <= num; j += INC)
+            for (long j = (lim/2) + 2; j <= num; j += INC)
             {
-                if (num % j == 0)
+                if (num % j == 0 || !flag)
                 {
+                    flag = false;
                     return j;
                 }
             }
@@ -61,14 +57,9 @@ namespace Taller_3
         public static bool isPrime(long num)
         {
 
-            return (firstDivGreaterThan(num) == num  && firstDivMiddle(num) == num);
+            return (firstDivGreaterThan(num) == num && firstDivMiddle(num) == num);
             //return (firstDivGreaterThan(num) == num);
         }
-
-
-       
-
-
 
     }
 }
