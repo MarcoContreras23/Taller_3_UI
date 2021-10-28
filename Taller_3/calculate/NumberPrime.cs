@@ -31,8 +31,9 @@ namespace Taller_3
         {
             int INC = (num % 2 == 1) ? 2 : 1;
             long lim = (long) Math.Sqrt(num);
+            int ini = (num % 2 == 0) ? 3 : 2;
 
-            for (long i = 2; i < lim / 2; i += INC)
+            for (long i = ini; i < lim / 2; i += INC)
             {
                 if (num % i == 0 || !flag)
                 {
