@@ -27,9 +27,8 @@ namespace Taller_3
 
             DateTime ini, fin;
             System.TimeSpan dur;
-            bool esPrimo = false; 
-
-            long num =long.Parse(numericUpDown1.Text);
+            bool esPrimo = false;
+            long num = long.Parse(textBox1.Text);
             //9223372036854775783
 
             Thread[] tr = new Thread[3];
@@ -89,8 +88,7 @@ namespace Taller_3
             bool IsPrimeNoThread = false;
             DateTime ini, fin;
             System.TimeSpan dur;
-            long num = long.Parse(numericUpDown1.Text);
-
+            long num = long.Parse(textBox1.Text);
             ini = DateTime.Now;
             IsPrimeNoThread = NumberPrimeNoThread.isPrime(num);
             fin = DateTime.Now;
@@ -113,6 +111,11 @@ namespace Taller_3
                 string tiempo = dur.ToString();
                 label5.Text = tiempo;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
