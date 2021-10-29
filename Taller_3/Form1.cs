@@ -14,6 +14,7 @@ namespace Taller_3
 {
     public partial class Form1 : Form
     {
+        public long first, last = 0;
 
 
 
@@ -31,18 +32,16 @@ namespace Taller_3
             long num = long.Parse(textBox1.Text);
             //9223372036854775783
 
-            Thread[] tr = new Thread[3];
+            Thread[] tr = new Thread[2];
 
             ini = DateTime.Now;
-            esPrimo = NumberPrime.isPrime(num);
+
+            tr[0] = new Thread(() => { this.first = NumberPrime.firstDivGreaterThan(num); });
+            tr[1] = new Thread(() => { this.last = NumberPrime.firstDivMiddle(num); });
+            //tr[2] = new Thread(() => NumberPrime.isPrime(num));
             fin = DateTime.Now;
 
             dur = fin.Subtract(ini);
-
-
-            tr[0] = new Thread(() => NumberPrime.firstDivGreaterThan(num));
-            tr[1] = new Thread(() => NumberPrime.firstDivMiddle(num));
-            tr[2] = new Thread(() => NumberPrime.isPrime(num));
 
             foreach (var thread in tr)
             {
@@ -50,7 +49,7 @@ namespace Taller_3
                 thread.Join();
             }
 
-            if (esPrimo)
+            if (first == num && last == num)
             {
                 string numero = num.ToString();
                 string rta = numero + " Es primo";
@@ -65,6 +64,7 @@ namespace Taller_3
                 label2.Text = rta;
                 string tiempo = dur.ToString();
                 label3.Text = tiempo;
+                NumberPrime.reset();
             }
         }
 
